@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.io.File;
 import io.swagger.client.model.PersonGroupIdentify;
 import io.swagger.client.model.PersonVerify;
 
@@ -63,7 +64,7 @@ public class RecognitionApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call personGroupIdentifyCall(String personGroupUuid, String picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call personGroupIdentifyCall(String personGroupUuid, File picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -86,7 +87,7 @@ public class RecognitionApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/x-www-form-urlencoded"
+            "multipart/form-data"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -108,7 +109,7 @@ public class RecognitionApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call personGroupIdentifyValidateBeforeCall(String personGroupUuid, String picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call personGroupIdentifyValidateBeforeCall(String personGroupUuid, File picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'personGroupUuid' is set
         if (personGroupUuid == null) {
             throw new ApiException("Missing the required parameter 'personGroupUuid' when calling personGroupIdentify(Async)");
@@ -131,7 +132,7 @@ public class RecognitionApi {
      * @return List&lt;PersonGroupIdentify&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<PersonGroupIdentify> personGroupIdentify(String personGroupUuid, String picture) throws ApiException {
+    public List<PersonGroupIdentify> personGroupIdentify(String personGroupUuid, File picture) throws ApiException {
         ApiResponse<List<PersonGroupIdentify>> resp = personGroupIdentifyWithHttpInfo(personGroupUuid, picture);
         return resp.getData();
     }
@@ -144,7 +145,7 @@ public class RecognitionApi {
      * @return ApiResponse&lt;List&lt;PersonGroupIdentify&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<PersonGroupIdentify>> personGroupIdentifyWithHttpInfo(String personGroupUuid, String picture) throws ApiException {
+    public ApiResponse<List<PersonGroupIdentify>> personGroupIdentifyWithHttpInfo(String personGroupUuid, File picture) throws ApiException {
         com.squareup.okhttp.Call call = personGroupIdentifyValidateBeforeCall(personGroupUuid, picture, null, null);
         Type localVarReturnType = new TypeToken<List<PersonGroupIdentify>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -159,7 +160,7 @@ public class RecognitionApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call personGroupIdentifyAsync(String personGroupUuid, String picture, final ApiCallback<List<PersonGroupIdentify>> callback) throws ApiException {
+    public com.squareup.okhttp.Call personGroupIdentifyAsync(String personGroupUuid, File picture, final ApiCallback<List<PersonGroupIdentify>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -194,7 +195,7 @@ public class RecognitionApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call personVerifyCall(String personUuid, String picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call personVerifyCall(String personUuid, File picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -217,7 +218,7 @@ public class RecognitionApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/x-www-form-urlencoded"
+            "multipart/form-data"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -239,7 +240,7 @@ public class RecognitionApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call personVerifyValidateBeforeCall(String personUuid, String picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call personVerifyValidateBeforeCall(String personUuid, File picture, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'personUuid' is set
         if (personUuid == null) {
             throw new ApiException("Missing the required parameter 'personUuid' when calling personVerify(Async)");
@@ -262,7 +263,7 @@ public class RecognitionApi {
      * @return PersonVerify
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonVerify personVerify(String personUuid, String picture) throws ApiException {
+    public PersonVerify personVerify(String personUuid, File picture) throws ApiException {
         ApiResponse<PersonVerify> resp = personVerifyWithHttpInfo(personUuid, picture);
         return resp.getData();
     }
@@ -275,7 +276,7 @@ public class RecognitionApi {
      * @return ApiResponse&lt;PersonVerify&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonVerify> personVerifyWithHttpInfo(String personUuid, String picture) throws ApiException {
+    public ApiResponse<PersonVerify> personVerifyWithHttpInfo(String personUuid, File picture) throws ApiException {
         com.squareup.okhttp.Call call = personVerifyValidateBeforeCall(personUuid, picture, null, null);
         Type localVarReturnType = new TypeToken<PersonVerify>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -290,7 +291,7 @@ public class RecognitionApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call personVerifyAsync(String personUuid, String picture, final ApiCallback<PersonVerify> callback) throws ApiException {
+    public com.squareup.okhttp.Call personVerifyAsync(String personUuid, File picture, final ApiCallback<PersonVerify> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -2,7 +2,7 @@
 
 facial recognition api
 - API version: 1.0
-  - Build date: 2019-07-22T14:59:09.204Z[GMT]
+  - Build date: 2019-07-22T19:59:48.600Z[GMT]
 
 # Introducão  
 Seja bem-vindo a documentação da API de Reconhecimento Facial da [HIMNI.COM](https://himni.com)   Nossa API foi criada utilizando o padrão [REST](https://restfulapi.net/) e [HATEOAS](https://restfulapi.net/hateoas/), possibilitando a integração de seu sistema ao nosso, e está documentada abaixo.  # Como usar a API?  Logo a seguir você encontrará todos os recursos e métodos suportados pela API, sendo que essa página possibilita que você teste os recursos e métodos diretamente através dela.  # Autenticação  Você precisa de um [HTTP BEARER TOKEN](https://oauth.net/2/bearer-tokens/) para identificar a conta que está realizando solicitações para a API. Você pode obter seu token de autenticação no seu [Painel do Cliente](https://face.himni.com.br/).  Insira seu token no campo que se encontra topo desta página para testar os métodos da API.
@@ -88,7 +88,7 @@ public class FaceApiExample {
 
         FaceApi apiInstance = new FaceApi();
         String personUuid = "personUuid_example"; // String | 
-        String picture = "picture_example"; // String | 
+        File picture = new File("picture_example"); // File | 
         String meta = "meta_example"; // String | 
         try {
             PersonCreateFace result = apiInstance.personCreateFace(personUuid, picture, meta);

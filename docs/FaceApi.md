@@ -31,7 +31,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 FaceApi apiInstance = new FaceApi();
 String personUuid = "personUuid_example"; // String | 
-String picture = "picture_example"; // String | 
+File picture = new File("picture_example"); // File | 
 String meta = "meta_example"; // String | 
 try {
     PersonCreateFace result = apiInstance.personCreateFace(personUuid, picture, meta);
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **personUuid** | **String**|  |
- **picture** | **String**|  | [optional]
+ **picture** | **File**|  | [optional]
  **meta** | **String**|  | [optional]
 
 ### Return type
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 <a name="personDeleteFace"></a>

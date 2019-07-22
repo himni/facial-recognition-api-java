@@ -13,6 +13,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
+import java.io.File;
 import io.swagger.client.model.PersonGroupIdentify;
 import io.swagger.client.model.PersonVerify;
 import org.junit.Test;
@@ -42,7 +43,7 @@ public class RecognitionApiTest {
     @Test
     public void personGroupIdentifyTest() throws ApiException {
         String personGroupUuid = null;
-        String picture = null;
+        File picture = null;
         List<PersonGroupIdentify> response = api.personGroupIdentify(personGroupUuid, picture);
 
         // TODO: test validations
@@ -58,7 +59,7 @@ public class RecognitionApiTest {
     @Test
     public void personVerifyTest() throws ApiException {
         String personUuid = null;
-        String picture = null;
+        File picture = null;
         PersonVerify response = api.personVerify(personUuid, picture);
 
         // TODO: test validations

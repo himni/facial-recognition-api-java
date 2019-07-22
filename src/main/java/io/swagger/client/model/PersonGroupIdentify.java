@@ -27,7 +27,7 @@ import java.math.BigDecimal;
  * PersonGroupIdentify
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-07-22T14:59:09.204Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-07-22T19:59:48.600Z[GMT]")
 public class PersonGroupIdentify {
   @SerializedName("person")
   private Person person = null;

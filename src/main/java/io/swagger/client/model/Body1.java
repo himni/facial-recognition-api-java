@@ -20,17 +20,18 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.File;
 import java.io.IOException;
 /**
  * Body1
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-07-22T14:59:09.204Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-07-22T19:59:48.600Z[GMT]")
 public class Body1 {
   @SerializedName("picture")
-  private String picture = null;
+  private File picture = null;
 
-  public Body1 picture(String picture) {
+  public Body1 picture(File picture) {
     this.picture = picture;
     return this;
   }
@@ -40,11 +41,11 @@ public class Body1 {
    * @return picture
   **/
   @Schema(required = true, description = "")
-  public String getPicture() {
+  public File getPicture() {
     return picture;
   }
 
-  public void setPicture(String picture) {
+  public void setPicture(File picture) {
     this.picture = picture;
   }
 
@@ -58,12 +59,12 @@ public class Body1 {
       return false;
     }
     Body1 body1 = (Body1) o;
-    return Objects.equals(this.picture, body1.picture);
+    return Arrays.equals(this.picture, body1.picture);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(picture);
+    return Objects.hash(Arrays.hashCode(picture));
   }
 
 

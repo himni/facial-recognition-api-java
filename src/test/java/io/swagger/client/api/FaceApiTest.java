@@ -13,6 +13,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
+import java.io.File;
 import io.swagger.client.model.PersonCreateFace;
 import io.swagger.client.model.PersonUpdateFace;
 import io.swagger.client.model.PersonUpdateFaceRequest;
@@ -44,7 +45,7 @@ public class FaceApiTest {
     @Test
     public void personCreateFaceTest() throws ApiException {
         String personUuid = null;
-        String picture = null;
+        File picture = null;
         String meta = null;
         PersonCreateFace response = api.personCreateFace(personUuid, picture, meta);
 

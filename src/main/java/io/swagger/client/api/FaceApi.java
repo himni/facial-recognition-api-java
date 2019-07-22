@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.io.File;
 import io.swagger.client.model.PersonCreateFace;
 import io.swagger.client.model.PersonUpdateFace;
 import io.swagger.client.model.PersonUpdateFaceRequest;
@@ -66,7 +67,7 @@ public class FaceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call personCreateFaceCall(String personUuid, String picture, String meta, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call personCreateFaceCall(String personUuid, File picture, String meta, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -91,7 +92,7 @@ public class FaceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/x-www-form-urlencoded"
+            "multipart/form-data"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -113,7 +114,7 @@ public class FaceApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call personCreateFaceValidateBeforeCall(String personUuid, String picture, String meta, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call personCreateFaceValidateBeforeCall(String personUuid, File picture, String meta, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'personUuid' is set
         if (personUuid == null) {
             throw new ApiException("Missing the required parameter 'personUuid' when calling personCreateFace(Async)");
@@ -137,7 +138,7 @@ public class FaceApi {
      * @return PersonCreateFace
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonCreateFace personCreateFace(String personUuid, String picture, String meta) throws ApiException {
+    public PersonCreateFace personCreateFace(String personUuid, File picture, String meta) throws ApiException {
         ApiResponse<PersonCreateFace> resp = personCreateFaceWithHttpInfo(personUuid, picture, meta);
         return resp.getData();
     }
@@ -151,7 +152,7 @@ public class FaceApi {
      * @return ApiResponse&lt;PersonCreateFace&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonCreateFace> personCreateFaceWithHttpInfo(String personUuid, String picture, String meta) throws ApiException {
+    public ApiResponse<PersonCreateFace> personCreateFaceWithHttpInfo(String personUuid, File picture, String meta) throws ApiException {
         com.squareup.okhttp.Call call = personCreateFaceValidateBeforeCall(personUuid, picture, meta, null, null);
         Type localVarReturnType = new TypeToken<PersonCreateFace>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -167,7 +168,7 @@ public class FaceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call personCreateFaceAsync(String personUuid, String picture, String meta, final ApiCallback<PersonCreateFace> callback) throws ApiException {
+    public com.squareup.okhttp.Call personCreateFaceAsync(String personUuid, File picture, String meta, final ApiCallback<PersonCreateFace> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

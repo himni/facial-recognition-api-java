@@ -29,7 +29,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 RecognitionApi apiInstance = new RecognitionApi();
 String personGroupUuid = "personGroupUuid_example"; // String | 
-String picture = "picture_example"; // String | 
+File picture = new File("picture_example"); // File | 
 try {
     List<PersonGroupIdentify> result = apiInstance.personGroupIdentify(personGroupUuid, picture);
     System.out.println(result);
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **personGroupUuid** | **String**|  |
- **picture** | **String**|  | [optional]
+ **picture** | **File**|  | [optional]
 
 ### Return type
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 <a name="personVerify"></a>
@@ -81,7 +81,7 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 RecognitionApi apiInstance = new RecognitionApi();
 String personUuid = "personUuid_example"; // String | 
-String picture = "picture_example"; // String | 
+File picture = new File("picture_example"); // File | 
 try {
     PersonVerify result = apiInstance.personVerify(personUuid, picture);
     System.out.println(result);
@@ -96,7 +96,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **personUuid** | **String**|  |
- **picture** | **String**|  | [optional]
+ **picture** | **File**|  | [optional]
 
 ### Return type
 
@@ -108,6 +108,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
